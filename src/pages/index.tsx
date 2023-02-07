@@ -24,6 +24,10 @@ const HeaderTitle = styled.div`
   line-height: 56px;
   letter-spacing: -0.045em;
   text-align: left;
+
+  @media screen and (max-width: 678px) {
+    font-size: 32px;
+  }
 `
 
 const HeaderMenu = styled.ul`
@@ -31,6 +35,10 @@ const HeaderMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 678px) {
+    display: none;
+  }
 `
 
 const MenuItem = styled.li`
@@ -46,15 +54,25 @@ const MenuLink = styled.a`
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
+  color: inherit;
+  text-decoration: none;
 `
 
 const HeroWrapper = styled.div`
   height: 600px;
   background: linear-gradient(180deg, #003A0D 0%, rgba(0, 58, 13, 0.846717) 87.5%, rgba(0, 58, 13, 0.83) 100%);
+
+  @media screen and (max-width: 678px) {
+    height: 300px;
+  }
 `
 
 const HeroContent = styled(Wrapper)`
   padding-top: 75px;
+
+  @media screen and (max-width: 678px) {
+    padding-top: 60px;
+  }
 `
 
 const AboutUsSession = styled.div`
@@ -81,10 +99,19 @@ const HeroText = styled.p`
   text-align: left;
   color: #FFFFFF;
   white-space: pre-line;
+
+  @media screen and (max-width: 678px) {
+    font-size: 48px;
+    line-height: 55px;
+  }
 `
 
 const AboutUsContent = styled.div`
   padding-top: 65px;
+
+  @media screen and (max-width: 678px) {
+    padding-top: 35px;
+  }
 `
 
 const AboutUsText = styled.p`
@@ -94,6 +121,11 @@ const AboutUsText = styled.p`
   line-height: 27px;
   letter-spacing: 0em;
   text-align: center;
+
+  @media screen and (max-width: 678px) {
+    font-size: 16px;
+    white-space: pre-line;
+  }
 `
 
 const ReadyRollsLogo = styled(Image)`
@@ -109,6 +141,7 @@ const TextWrapper = styled.div`
 `
 const ImageWrapper = styled.div`
   display: block;
+  text-align: center;
 `
 
 const ContactUsContent = styled.div`
@@ -116,14 +149,26 @@ const ContactUsContent = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+
+  @media screen and (max-width: 678px) {
+    display: block;
+  }
 `
 
 const ContactAddress = styled.div`
   width: 50%;
+
+  @media screen and (max-width: 678px) {
+    width: 100%;
+  }
 `
 
 const ContactMap = styled.div`
   width: 50%;
+
+  @media screen and (max-width: 678px) {
+    display: none;
+  }
 `
 
 const CompanyAddressSection = styled.div`
@@ -139,6 +184,10 @@ const CompanyName = styled.p`
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 678px) {
+    font-size: 16px;
+  }
 `
 
 const CompanyBranch = styled.p`
@@ -149,6 +198,10 @@ const CompanyBranch = styled.p`
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 678px) {
+    font-size: 15px;
+  }
 `
 
 const CompanyAddress = styled.p`
@@ -159,6 +212,10 @@ const CompanyAddress = styled.p`
   letter-spacing: 0em;
   text-align: left;
   white-space: pre-line;
+
+  @media screen and (max-width: 678px) {
+    font-size: 14px;
+  }
 `
 
 const CompanyPhone = styled.p`
@@ -221,14 +278,16 @@ export default function Home() {
           <Wrapper>
             <AboutUsContent>
               <TextWrapper>
-                <AboutUsText>เราเป็นผู้ผลิตกระดาษความร้อน หรือกระดาษเทอร์มอล คุณภาพสูงในประเทศไทย</AboutUsText>
-                <AboutUsText>โดยเรามุ่งเน้นคุณภาพของสินค้าที่ผลิต เพื่อผู้ใช้งานได้ใช้สินค้าที่มีคุณภาพสูงสุด</AboutUsText>
+                <AboutUsText>{`เราเป็นผู้ผลิตกระดาษความร้อน \nหรือกระดาษเทอร์มอล คุณภาพสูงในประเทศไทย`}</AboutUsText>
+                <AboutUsText>{`โดยเรามุ่งเน้นคุณภาพของสินค้าที่ผลิต \nเพื่อผู้ใช้งานได้ใช้สินค้าที่มีคุณภาพสูงสุด`}</AboutUsText>
               </TextWrapper>
               <TextWrapper>
                 <AboutUsText>จำหน่ายภายใต้แบรนด์ <b>ReadyRolls</b></AboutUsText>
               </TextWrapper>
               <ImageWrapper>
-                <ReadyRollsLogo src={readyRolls} alt="ReadyRolls" />
+                <a href="http://www.readyrolls.com">
+                  <ReadyRollsLogo src={readyRolls} alt="ReadyRolls" />
+                </a>
               </ImageWrapper>
             </AboutUsContent>
           </Wrapper>
