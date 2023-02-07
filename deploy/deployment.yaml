@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: readypaper-website
+  labels:
+    app: readypaper-website
+spec:
+  selector:
+    app: readypaper-website
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      name: http-traffic
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readypaper-website
+spec:
+  selector:
+    matchLabels:
+      app: readypaper-website
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: readypaper-website
+    spec:
+      containers:
+        - name: readypaper-website
+          image: localhost:32000/readypaper-website:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "50m"
