@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Image from 'next/image';
 import readyRolls from "../../public/ReadyRolls.png";
+import Head from "next/head";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -232,7 +233,10 @@ const GoogleMapBox = styled.div`
   width: 600px;
   border-radius: 0px;
   background: #636363;
-  box-shadow: 0px 4px 4px 0px #00000040 inset;
+`
+
+const GoogleMapFrame = styled.iframe`
+  border: none;
 `
 
 const FooterContent = styled.div`
@@ -252,6 +256,12 @@ const CopyRight = styled.p`
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Ready Paper Co., Ltd. บริษัท เรดดี้ เปเปอร์​ จำกัด</title>
+        <meta name="description" content="Ready Paper Co., Ltd." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <header>
         <HeaderWrapper>
           <HeaderTitle>Ready Paper</HeaderTitle>
@@ -297,7 +307,7 @@ export default function Home() {
             <ContactUsContent>
               <ContactMap>
                 <GoogleMapBox>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.828009906774!2d100.6672835!3d14.0205631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x378e6cdcb250e64!2sReady%20Paper%20Co.%2C%20Ltd.!5e0!3m2!1sth!2sth!4v1675759840368!5m2!1sth!2sth" width="600" height="350" loading="lazy"></iframe>
+                  <GoogleMapFrame src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.828009906774!2d100.6672835!3d14.0205631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x378e6cdcb250e64!2sReady%20Paper%20Co.%2C%20Ltd.!5e0!3m2!1sth!2sth!4v1675759840368!5m2!1sth!2sth" width="600" height="350" loading="lazy"></GoogleMapFrame>
                 </GoogleMapBox>
               </ContactMap>
               <ContactAddress>
