@@ -19,6 +19,3 @@ spec:
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
-    - name: gradle-repo
-      persistentVolumeClaim:
-        claimName: gradle-repo
